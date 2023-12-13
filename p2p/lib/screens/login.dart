@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:p2p/constants.dart';
 import 'package:p2p/screens/signUp.dart';
 
-class login extends StatelessWidget {
+class login extends StatefulWidget {
   login({super.key});
 
+  @override
+  State<login> createState() => _loginState();
+}
+
+class _loginState extends State<login> {
+  bool secureTextD = true;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -28,19 +35,19 @@ class login extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
             ),
-              Row(
-                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                    Text(
-              "to ",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Color(0xff2f1155),
-                fontSize: 24,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-                  Text(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "to ",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Color(0xff2f1155),
+                    fontSize: 24,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                Text(
                   "Smart Pay",
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -48,9 +55,9 @@ class login extends StatelessWidget {
                     fontSize: 24,
                     fontWeight: FontWeight.w600,
                   ),
-                              ),
-                ],
-              ),
+                ),
+              ],
+            ),
             SizedBox(height: height / 5),
             //phone number field
             Padding(
@@ -71,7 +78,7 @@ class login extends StatelessWidget {
 
                   labelText: "Phine number",
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xff5063bf)),
+                    borderSide: BorderSide(width: 2, color: kColor1),
                     borderRadius: BorderRadius.circular(15),
                   ),
                   // border: ,
@@ -90,6 +97,7 @@ class login extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: TextFormField(
+                obscureText: secureTextD,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return "password is empty";
@@ -102,10 +110,19 @@ class login extends StatelessWidget {
                 },
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.vpn_key_sharp),
-                  suffixIcon: Icon(Icons.visibility),
+                  // suffixIcon: Icon(Icons.visibility),
+                  suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          secureTextD = !secureTextD;
+                        });
+                      },
+                      icon: Icon(secureTextD
+                          ? Icons.visibility_off
+                          : Icons.visibility)),
                   labelText: "Password",
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xff5063bf)),
+                    borderSide: BorderSide(width: 2, color: kColor1),
                     borderRadius: BorderRadius.circular(15),
                   ),
                   // border: ,

@@ -28,11 +28,11 @@ class _RegisterState extends State<Register> {
                 alignment: Alignment.topLeft,
                 child: GestureDetector(
                   onTap: () => Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute<void>(
-                    builder: (BuildContext context) => signUp(),
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) => signUp(),
+                    ),
                   ),
-                ),
                   child: Icon(
                     Icons.arrow_back,
                     size: 32,

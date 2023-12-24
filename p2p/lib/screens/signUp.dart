@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:p2p/constants.dart';
 import 'package:p2p/screens/otp.dart';
 import 'package:p2p/screens/phoneVarification.dart';
+import 'package:p2p/widgets/genderRadio.dart';
 
 class signUp extends StatefulWidget {
   const signUp({super.key});
@@ -103,54 +104,10 @@ class _signUpState extends State<signUp> {
                 },
               ),
             ),
-//chose the user gender
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                    height: 50,
-                    width: 100,
-                    child: Center(
-                      child: Text(
-                        "male",
-                        style: TextStyle(
-                          color: Color(0xff2f1155),
-                          fontSize: 24,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                    height: 50,
-                    width: 100,
-                    child: Center(
-                      child: Text(
-                        "female",
-                        style: TextStyle(
-                          color: Color(0xff2f1155),
-                          fontSize: 24,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.pink,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+
+//gender class selector
+
+            ContainerRadioButtons(),
 
 //chose city field
             Padding(
@@ -246,7 +203,7 @@ class _signUpState extends State<signUp> {
                 ),
               ),
             ),
-            //registr-signup route by text register now
+            //registr-signup route by button register
             //signup button
             Padding(
               padding: const EdgeInsets.all(10.0),
@@ -294,3 +251,52 @@ class _signUpState extends State<signUp> {
     }
   }
 }
+
+//chose the user gender
+// Row(
+//   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//   children: [
+//     Padding(
+//       padding: const EdgeInsets.all(10.0),
+//       child: Container(
+//         height: 50,
+//         width: 100,
+//         child: Center(
+//           child: Text(
+//             "male",
+//             style: TextStyle(
+//               color: Color(0xff2f1155),
+//               fontSize: 24,
+//               fontWeight: FontWeight.w600,
+//             ),
+//           ),
+//         ),
+//         decoration: BoxDecoration(
+//           color: Colors.grey,
+//           borderRadius: BorderRadius.circular(20),
+//         ),
+//       ),
+//     ),
+//     Padding(
+//       padding: const EdgeInsets.all(10.0),
+//       child: Container(
+//         height: 50,
+//         width: 100,
+//         child: Center(
+//           child: Text(
+//             "female",
+//             style: TextStyle(
+//               color: Color(0xff2f1155),
+//               fontSize: 24,
+//               fontWeight: FontWeight.w600,
+//             ),
+//           ),
+//         ),
+//         decoration: BoxDecoration(
+//           color: Colors.grey,
+//           borderRadius: BorderRadius.circular(20),
+//         ),
+//       ),
+//     ),
+//   ],
+// ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:p2p/constants.dart';
+import 'package:p2p/screens/home.dart';
 
 class Otp extends StatefulWidget {
   const Otp({super.key});
@@ -95,14 +96,21 @@ class _OtpState extends State<Otp> {
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute<void>(
+                                builder: (BuildContext context) => home(),
+                              ),
+                            );
+                          },
                           style: ButtonStyle(
                             foregroundColor:
                                 MaterialStateProperty.all<Color>(Colors.white),
                             backgroundColor:
                                 MaterialStateProperty.all<Color>(kColor1),
-                            shape:
-                                MaterialStateProperty.all<RoundedRectangleBorder>(
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
                               RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:p2p/constants.dart';
+import 'package:p2p/screens/bottomNavBar.dart';
 import 'package:p2p/screens/home.dart';
 
 class Otp extends StatefulWidget {
@@ -100,7 +101,7 @@ class _OtpState extends State<Otp> {
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute<void>(
-                                builder: (BuildContext context) => home(),
+                                builder: (BuildContext context) => navBar(),
                               ),
                             );
                           },

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:p2p/screens/addCard.dart';
 import 'package:p2p/screens/billPayment.dart';
+import 'package:p2p/screens/changePin/interPin.dart';
 import 'package:p2p/screens/checkBalance.dart';
+import 'package:p2p/screens/forgotPin.dart';
 import 'package:p2p/widgets/defoultCard.dart';
 import 'package:p2p/widgets/setDefoultCard.dart';
 
@@ -26,7 +29,7 @@ class manageCards extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.all(18.0),
           child: Column(
             children: [
               Row(
@@ -73,15 +76,27 @@ class manageCards extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
-                        if (index == 1) {
+                        if (index == 0) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => pillBayment()));
+                                  builder: (context) => addCard()));
+                        } else if (index == 3) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => interPin()));
+                        } else if (index == 4) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => forgotPin()));
+                        } else {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => checkBalance()));
                         }
-                          else {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => checkBalance()));
-                          }
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -143,7 +158,7 @@ class manageCards extends StatelessWidget {
                 Container(),
               ]),
               SizedBox(
-                height: 300,
+                height: 246.8,
                 width: width,
                 child: Row(
                   children: [

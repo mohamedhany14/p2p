@@ -3,8 +3,10 @@ import 'package:p2p/screens/balance.dart';
 import 'package:p2p/screens/billPayment.dart';
 import 'package:p2p/screens/manageCards.dart';
 import 'package:p2p/screens/service.dart';
+import 'package:p2p/screens/transactionHistory.dart';
 import 'package:p2p/widgets/cards.dart';
 import 'package:p2p/widgets/drawer.dart';
+import 'package:p2p/widgets/lastTransactions.dart';
 
 class home extends StatelessWidget {
   home({super.key});
@@ -225,7 +227,7 @@ class home extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 40,
+                height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -243,10 +245,10 @@ class home extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushReplacement(
+                      Navigator.push(
                         context,
                         MaterialPageRoute<void>(
-                          builder: (BuildContext context) => balance(),
+                          builder: (BuildContext context) => transaction(),
                         ),
                       );
                     },
@@ -262,6 +264,22 @@ class home extends StatelessWidget {
                     ),
                   )
                 ],
+              ),
+              SizedBox(
+                height: 135,
+                width: width,
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: ListView.builder(
+                          //scrollDirection: Axis.horizontal,
+                          itemCount: 3,
+                          itemBuilder: (context, index) {
+                            return transactionContainer();
+                          }),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

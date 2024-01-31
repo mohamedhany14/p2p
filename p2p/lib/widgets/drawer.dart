@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:p2p/screens/bottomNavBar.dart';
 import 'package:p2p/screens/home.dart';
 import 'package:p2p/screens/service.dart';
 
@@ -63,7 +64,7 @@ class navDrawer extends StatelessWidget {
               title: Text("Home"),
               onTap: () =>
                   Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (context) => home(),
+                builder: (context) => navBar(),
               )),
             ),
             ListTile(
@@ -79,11 +80,11 @@ class navDrawer extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.grid_view_rounded),
               title: Text("Service"),
-             onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => service()),
-                      );
-                    },
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => service()),
+                );
+              },
             ),
             ListTile(
               leading: Icon(Icons.send),
@@ -100,7 +101,7 @@ class navDrawer extends StatelessWidget {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute<void>(
-                    builder: (BuildContext context) => home(),
+                    builder: (BuildContext context) => navBar(),
                   ),
                 );
               },

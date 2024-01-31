@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:p2p/screens/bottomNavBar.dart';
 import 'package:p2p/widgets/defoultCard.dart';
 
 class checkBalance extends StatelessWidget {
@@ -56,24 +57,24 @@ class checkBalance extends StatelessWidget {
             SizedBox(
               height: 300,
             ),
-            GestureDetector(
-              onTap: () => Navigator.pop(context),
-              child: ElevatedButton(
-                onPressed: () {},
-                child: Text("Confirm",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w700,
-                    )),
-                style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    backgroundColor: Color(0xff5063bf),
-                    //elevation: 10,
-                    minimumSize: Size(140, 50)),
-              ),
+            ElevatedButton(
+              onPressed: () {
+                 Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => navBar()));
+              },
+              child: Text("Confirm",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                  )),
+              style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  backgroundColor: Color(0xff5063bf),
+                  //elevation: 10,
+                  minimumSize: Size(140, 50)),
             ),
           ],
         ),

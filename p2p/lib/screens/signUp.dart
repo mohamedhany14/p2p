@@ -7,7 +7,7 @@ import 'package:p2p/screens/phoneVarification.dart';
 import 'package:p2p/widgets/genderRadio.dart';
 
 class signUp extends StatefulWidget {
-  const signUp({super.key});
+  signUp({super.key});
 
   @override
   State<signUp> createState() => _signUpState();
@@ -18,6 +18,8 @@ class _signUpState extends State<signUp> {
   bool secureTextA = true;
   bool secureTextB = true;
   var selectedCity;
+
+  List<String> cities = ['Cairo', 'Alexandria', 'Giza', 'Ismailia'];
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -80,7 +82,54 @@ class _signUpState extends State<signUp> {
                 ),
               ),
             ),
+
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: TextFormField(
+                controller: TextEditingController(text: '@samrt pay'),
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.email),
+
+                  labelText: "Email",
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(width: 2, color: kColor1),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  // border: ,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                ),
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                child: DropdownButton<String>(
+                  isDense: false,
+                  borderRadius: BorderRadius.circular(20),
+                  hint: Text("select your city"),
+                  isExpanded: true,
+                  value: selectedCity, // Track the selected city
+                  items: cities.map((city) {
+                    return DropdownMenuItem<String>(
+                      value: city,
+                      child: Text(city),
+                    );
+                  }).toList(),
+                  onChanged: (newValue) {
+                    setState(() {
+                      selectedCity = newValue;
+                    });
+                  },
+                ),
+              ),
+            ),
+
             //birth date field
+
             Padding(
               padding: EdgeInsets.all(10),
               child: TextField(

@@ -73,10 +73,11 @@ class containerCards extends StatelessWidget {
             ),
       
             GestureDetector(
-              onTap: () =>
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (context) => const checkBalance(),
-              )),
+              onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => checkBalance()),
+                      );
+                    },
               child: Container(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -1,6 +1,8 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:p2p/widgets/defoultCard.dart';
 
+// ignore: camel_case_types
 class pillBayment extends StatelessWidget {
   pillBayment({super.key});
 
@@ -14,28 +16,27 @@ class pillBayment extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: Column(
             children: [
               Row(
                 children: [
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
-                    child: Icon(
+                    child: const Icon(
                       Icons.arrow_back,
                       size: 32,
                       color: Colors.black54,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 100,
                   ),
-                  Text(
+                  const Text(
                     'Bill Payment',
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -48,18 +49,18 @@ class pillBayment extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 60,
               ),
-              defoultCard(),
-              SizedBox(
+              const defoultCard(),
+              const SizedBox(
                 height: 60,
               ),
-              Container(
+              SizedBox(
                 height: height * 1.5 / 3,
                 child: GridView.builder(
                   scrollDirection: Axis.vertical,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3, // Number of columns
                   ),
                   itemCount: dataList.length,
@@ -72,11 +73,11 @@ class pillBayment extends StatelessWidget {
                         decoration: ShapeDecoration(
                           color: Color(0xFFF8F9FA),
                           shape: RoundedRectangleBorder(
-                            side: BorderSide(
+                            side: const BorderSide(
                                 width: 1.06, color: Color(0xFFEFF1F4)),
                             borderRadius: BorderRadius.circular(14.89),
                           ),
-                          shadows: [
+                          shadows: const [
                             BoxShadow(
                               color: Color(0x423A7BF8),
                               blurRadius: 40,
@@ -94,7 +95,7 @@ class pillBayment extends StatelessWidget {
                             Text(
                               dataList[index]['text'],
                               textAlign: TextAlign.center,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Color(0xFF3177FF),
                                 fontSize: 12,
                                 fontFamily: 'Poppins',
@@ -113,6 +114,5 @@ class pillBayment extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

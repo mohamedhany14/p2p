@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:p2p/screens/balance.dart';
+import 'package:p2p/screens/checkBalance.dart';
+
 
 class defoultCard extends StatelessWidget {
   const defoultCard({super.key});
@@ -76,7 +77,7 @@ class defoultCard extends StatelessWidget {
             GestureDetector(
               onTap: () =>
                   Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (context) => const balance(),
+                builder: (context) => const checkBalance(),
               )),
               child: Container(
                 child: Column(

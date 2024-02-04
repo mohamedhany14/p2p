@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:p2p/constants.dart';
 import 'package:p2p/screens/bottomNavBar.dart';
-import 'package:p2p/screens/home.dart';
 
 class Otp extends StatefulWidget {
   const Otp({super.key});

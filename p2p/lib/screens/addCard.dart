@@ -1,4 +1,3 @@
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -31,7 +30,7 @@ class _addCardState extends State<addCard> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(18.0),
+          padding: const EdgeInsets.all(18.0),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -39,16 +38,16 @@ class _addCardState extends State<addCard> {
                   children: [
                     GestureDetector(
                       onTap: () => Navigator.pop(context),
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_back,
                         size: 32,
                         color: Colors.black54,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 100,
                     ),
-                    Text(
+                    const Text(
                       'Add Cards ',
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -61,7 +60,7 @@ class _addCardState extends State<addCard> {
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Container(
@@ -72,13 +71,13 @@ class _addCardState extends State<addCard> {
                   child: DropdownButton<String>(
                     isDense: false,
                     borderRadius: BorderRadius.circular(20),
-                    hint: Text("select your bank"),
+                    hint: const Text("select your bank"),
                     isExpanded: true,
                     value: selectedBank, // Track the selected city
-                    items: banks.map((city) {
+                    items: banks.map((bank) {
                       return DropdownMenuItem<String>(
-                        value: city,
-                        child: Text(city),
+                        value: bank,
+                        child: Text(bank),
                       );
                     }).toList(),
                     onChanged: (newValue) {
@@ -88,7 +87,7 @@ class _addCardState extends State<addCard> {
                     },
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 TextFormField(
@@ -98,23 +97,23 @@ class _addCardState extends State<addCard> {
                     LengthLimitingTextInputFormatter(16),
                     CardNumberInputFormatter(),
                   ],
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: "Card number",
                     prefixIcon: ImageIcon(
                       AssetImage('assets/images/Bank Card.png'),
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: "full name",
                     prefixIcon: Icon(Icons.person),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Row(
@@ -128,7 +127,7 @@ class _addCardState extends State<addCard> {
                           FilteringTextInputFormatter.digitsOnly,
                           LengthLimitingTextInputFormatter(3),
                         ],
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: "cvv",
                           prefixIcon: ImageIcon(
                             AssetImage('assets/images/cvv.png'),
@@ -149,18 +148,14 @@ class _addCardState extends State<addCard> {
                           LengthLimitingTextInputFormatter(4),
                           CardMonthInputFormatter(),
                         ],
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                             labelText: "MM/YY",
-                            prefixIcon: Icon(Icons.calendar_today_outlined)
-                            // ImageIcon(
-                            //   AssetImage('assets/images/cvv.png'),
-                            // ),
-                            ),
+                            prefixIcon: Icon(Icons.calendar_today_outlined)),
                       ),
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 TextFormField(
@@ -186,7 +181,7 @@ class _addCardState extends State<addCard> {
                     labelText: "card pin ",
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Padding(
@@ -198,12 +193,12 @@ class _addCardState extends State<addCard> {
 
                       labelText: "Email",
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(width: 2, color: kColor1),
+                        borderSide: const BorderSide(width: 2, color: kColor1),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       // border: ,
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
+                        borderSide: const BorderSide(color: Colors.black),
                         borderRadius: BorderRadius.circular(15),
                       ),
                     ),
@@ -224,7 +219,7 @@ class _addCardState extends State<addCard> {
                       }
                     },
                     decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.vpn_key_sharp),
+                      prefixIcon: const Icon(Icons.vpn_key_sharp),
                       // suffixIcon: Icon(Icons.visibility),
                       suffixIcon: IconButton(
                           onPressed: () {
@@ -237,12 +232,12 @@ class _addCardState extends State<addCard> {
                               : Icons.visibility)),
                       labelText: "Password",
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(width: 2, color: kColor1),
+                        borderSide: const BorderSide(width: 2, color: kColor1),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       // border: ,
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
+                        borderSide: const BorderSide(color: Colors.black),
                         borderRadius: BorderRadius.circular(15),
                       ),
                     ),
@@ -253,7 +248,7 @@ class _addCardState extends State<addCard> {
                   child: TextFormField(
                     obscureText: secureTextB,
                     decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.vpn_key_sharp),
+                      prefixIcon: const Icon(Icons.vpn_key_sharp),
                       suffixIcon: IconButton(
                           onPressed: () {
                             setState(() {
@@ -266,44 +261,46 @@ class _addCardState extends State<addCard> {
 
                       labelText: "Confirm Password",
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(width: 2, color: kColor1),
+                        borderSide: const BorderSide(width: 2, color: kColor1),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       // border: ,
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
+                        borderSide: const BorderSide(color: Colors.black),
                         borderRadius: BorderRadius.circular(15),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 6,
                 ),
-                Container(
+                SizedBox(
                   width: 300,
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute<void>(
-                          builder: (BuildContext context) => navBar(),
+                          builder: (BuildContext context) => const navBar(),
                         ),
                       );
                     },
-                    child: Text("DONE",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
-                        )),
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),
                       ),
-                      backgroundColor: Color(0xff5063bf),
+                      backgroundColor: const Color(0xff5063bf),
                       //elevation: 10,
                       //  minimumSize: Size(100, 50)
+                    ),
+                    child: const Text(
+                      "DONE",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
                 ),

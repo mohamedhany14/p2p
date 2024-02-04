@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:p2p/screens/addCard.dart';
-import 'package:p2p/screens/billPayment.dart';
 import 'package:p2p/screens/changePin/interPin.dart';
 import 'package:p2p/screens/checkBalance.dart';
+import 'package:p2p/screens/deleteCard.dart';
 import 'package:p2p/screens/forgotPin.dart';
+import 'package:p2p/screens/transactionHistory.dart';
 import 'package:p2p/widgets/defoultCard.dart';
 import 'package:p2p/widgets/setDefoultCard.dart';
 
@@ -36,16 +37,16 @@ class manageCards extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
-                    child: Icon(
+                    child: const Icon(
                       Icons.arrow_back,
                       size: 32,
                       color: Colors.black54,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 100,
                   ),
-                  Text(
+                  const Text(
                     'Mange Cards ',
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -58,18 +59,18 @@ class manageCards extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               defoultCard(),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
-              Container(
+              SizedBox(
                 height: height * 0.9 / 3,
                 child: GridView.builder(
                   scrollDirection: Axis.vertical,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3, // Number of columns
                   ),
                   itemCount: dataList.length,
@@ -81,21 +82,36 @@ class manageCards extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => addCard()));
+                        } else if (index == 1) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const deleteCard()));
+                        } else if (index == 2) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const checkBalance()));
                         } else if (index == 3) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => interPin()));
+                                  builder: (context) => const interPin()));
                         } else if (index == 4) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => forgotPin()));
+                                  builder: (context) => const forgotPin()));
+                        } else if (index == 5) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const transaction()));
                         } else {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => checkBalance()));
+                                  builder: (context) => const checkBalance()));
                         }
                       },
                       child: Padding(
@@ -104,13 +120,13 @@ class manageCards extends StatelessWidget {
                           width: 91.0,
                           height: 109.0,
                           decoration: ShapeDecoration(
-                            color: Color(0xFFF8F9FA),
+                            color: const Color(0xFFF8F9FA),
                             shape: RoundedRectangleBorder(
-                              side: BorderSide(
+                              side: const BorderSide(
                                   width: 1.06, color: Color(0xFFEFF1F4)),
                               borderRadius: BorderRadius.circular(14.89),
                             ),
-                            shadows: [
+                            shadows: const [
                               BoxShadow(
                                 color: Color(0x423A7BF8),
                                 blurRadius: 40,
@@ -128,7 +144,7 @@ class manageCards extends StatelessWidget {
                               Text(
                                 dataList[index]['text'],
                                 textAlign: TextAlign.center,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   color: Color(0xFF3177FF),
                                   fontSize: 12,
                                   fontFamily: 'Poppins',
@@ -144,7 +160,7 @@ class manageCards extends StatelessWidget {
                 ),
               ),
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                Text(
+                const Text(
                   'Other Accounts',
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -167,7 +183,7 @@ class manageCards extends StatelessWidget {
                           scrollDirection: Axis.vertical,
                           itemCount: 4,
                           itemBuilder: (context, index) {
-                            return setDefoultCard();
+                            return const setDefoultCard();
                           }),
                     ),
                   ],

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:p2p/screens/balance.dart';
+
 import 'package:p2p/screens/checkBalance.dart';
 
 class containerCards extends StatelessWidget {
   const containerCards({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -71,13 +71,13 @@ class containerCards extends StatelessWidget {
                 ),
               ],
             ),
-      
+
             GestureDetector(
               onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => checkBalance()),
-                      );
-                    },
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => checkBalance()),
+                );
+              },
               child: Container(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -110,6 +110,5 @@ class containerCards extends StatelessWidget {
         ),
       ),
     );
-   
   }
 }

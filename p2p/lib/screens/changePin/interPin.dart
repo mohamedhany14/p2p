@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:p2p/constants.dart';
 import 'package:p2p/screens/bottomNavBar.dart';
 import 'package:p2p/screens/changePin/changePin.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -99,12 +100,12 @@ class _interPinState extends State<interPin> {
                       shape: PinCodeFieldShape.box,
                       fieldWidth: 50,
                       inactiveColor: Colors.grey,
-                      selectedColor: Colors.lightBlue,
-                      activeFillColor: Colors.blue,
-                      selectedFillColor: Colors.blue,
-                      inactiveFillColor: Colors.grey.shade100,
-                      borderWidth: 1,
-                      borderRadius: BorderRadius.circular(8),
+                          selectedColor: kColor1,
+                          activeFillColor: kColor1,
+                          selectedFillColor: kColor1,
+                          inactiveFillColor: Colors.grey,
+                          borderWidth: 1,
+                          borderRadius: BorderRadius.circular(8),
                     ),
                   ),
                 ),

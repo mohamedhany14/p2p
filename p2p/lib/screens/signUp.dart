@@ -1,8 +1,5 @@
-//import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:p2p/constants.dart';
-import 'package:p2p/screens/otp.dart';
 import 'package:p2p/screens/phoneVarification.dart';
 import 'package:p2p/widgets/genderRadio.dart';
 

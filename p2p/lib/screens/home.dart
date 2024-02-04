@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:p2p/screens/balance.dart';
 import 'package:p2p/screens/billPayment.dart';
 import 'package:p2p/screens/manageCards.dart';
 import 'package:p2p/screens/service.dart';
@@ -41,10 +40,10 @@ class home extends StatelessWidget {
           padding: const EdgeInsets.all(15.0),
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
-              Text(
+              const Text(
                 'Good Afternoon',
                 style: TextStyle(
                   color: Color(0xFF878787),
@@ -54,7 +53,7 @@ class home extends StatelessWidget {
                   letterSpacing: 0.05,
                 ),
               ),
-              Text(
+              const Text(
                 'Mohamed hany',
                 style: TextStyle(
                   color: Color(0xFF5163BF),
@@ -64,13 +63,13 @@ class home extends StatelessWidget {
                   letterSpacing: 0.08,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     'Accounts',
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -87,7 +86,7 @@ class home extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => manageCards()),
                       );
                     },
-                    child: Text(
+                    child: const Text(
                       'Mange',
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -101,7 +100,7 @@ class home extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               SizedBox(
@@ -120,13 +119,13 @@ class home extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     'Service',
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -143,7 +142,7 @@ class home extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => service()),
                       );
                     },
-                    child: Text(
+                    child: const Text(
                       'More >',
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -157,14 +156,14 @@ class home extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Container(
+              SizedBox(
                 height: height * 0.9 / 3,
                 child: GridView.builder(
                   scrollDirection: Axis.vertical,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3, // Number of columns
                   ),
                   itemCount: dataList.length,
@@ -189,11 +188,11 @@ class home extends StatelessWidget {
                           decoration: ShapeDecoration(
                             color: Color(0xFFF8F9FA),
                             shape: RoundedRectangleBorder(
-                              side: BorderSide(
+                              side: const BorderSide(
                                   width: 1.06, color: Color(0xFFEFF1F4)),
                               borderRadius: BorderRadius.circular(14.89),
                             ),
-                            shadows: [
+                            shadows: const [
                               BoxShadow(
                                 color: Color(0x423A7BF8),
                                 blurRadius: 40,
@@ -211,7 +210,7 @@ class home extends StatelessWidget {
                               Text(
                                 dataList[index]['text'],
                                 textAlign: TextAlign.center,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   color: Color(0xFF3177FF),
                                   fontSize: 12,
                                   fontFamily: 'Poppins',
@@ -226,13 +225,13 @@ class home extends StatelessWidget {
                   },
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     'Last Transactions',
                     style: TextStyle(
                       color: Color(0xFF878787),
@@ -252,7 +251,7 @@ class home extends StatelessWidget {
                         ),
                       );
                     },
-                    child: Text(
+                    child: const Text(
                       'See All  >',
                       style: TextStyle(
                         color: Color(0xFF5163BF),
@@ -275,7 +274,7 @@ class home extends StatelessWidget {
                           //scrollDirection: Axis.horizontal,
                           itemCount: 3,
                           itemBuilder: (context, index) {
-                            return transactionContainer();
+                            return const transactionContainer();
                           }),
                     ),
                   ],

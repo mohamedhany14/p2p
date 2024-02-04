@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:p2p/constants.dart';
 import 'package:p2p/screens/addCard.dart';
-import 'package:p2p/screens/bottomNavBar.dart';
 import 'package:p2p/screens/changePin/changePin.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 

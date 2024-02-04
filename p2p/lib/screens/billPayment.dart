@@ -1,5 +1,8 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:p2p/screens/ElectricityBills/electricityProviders.dart';
+import 'package:p2p/screens/GasBills/GasPrivider.dart';
+import 'package:p2p/screens/GasBills/gasBills.dart';
 import 'package:p2p/widgets/defoultCard.dart';
 
 // ignore: camel_case_types
@@ -65,44 +68,64 @@ class pillBayment extends StatelessWidget {
                   ),
                   itemCount: dataList.length,
                   itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        width: 91.0,
-                        height: 109.0,
-                        decoration: ShapeDecoration(
-                          color: Color(0xFFF8F9FA),
-                          shape: RoundedRectangleBorder(
-                            side: const BorderSide(
-                                width: 1.06, color: Color(0xFFEFF1F4)),
-                            borderRadius: BorderRadius.circular(14.89),
+                    return GestureDetector(
+                      onTap: () {
+                        if (index == 0) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => electricityProvider()));
+                        } else if (index == 3) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => gasProvider()));
+                        } else {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const GasBills()));
+                        }
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          width: 91.0,
+                          height: 109.0,
+                          decoration: ShapeDecoration(
+                            color: const Color(0xFFF8F9FA),
+                            shape: RoundedRectangleBorder(
+                              side: const BorderSide(
+                                  width: 1.06, color: Color(0xFFEFF1F4)),
+                              borderRadius: BorderRadius.circular(14.89),
+                            ),
+                            shadows: const [
+                              BoxShadow(
+                                color: Color(0x423A7BF8),
+                                blurRadius: 40,
+                                offset: Offset(0, 10),
+                                spreadRadius: 0,
+                              )
+                            ],
                           ),
-                          shadows: const [
-                            BoxShadow(
-                              color: Color(0x423A7BF8),
-                              blurRadius: 40,
-                              offset: Offset(0, 10),
-                              spreadRadius: 0,
-                            )
-                          ],
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Image.asset(
-                              dataList[index]['imageUrl'],
-                            ),
-                            Text(
-                              dataList[index]['text'],
-                              textAlign: TextAlign.center,
-                              style: const TextStyle(
-                                color: Color(0xFF3177FF),
-                                fontSize: 12,
-                                fontFamily: 'Poppins',
-                                fontWeight: FontWeight.w600,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Image.asset(
+                                dataList[index]['imageUrl'],
                               ),
-                            ),
-                          ],
+                              Text(
+                                dataList[index]['text'],
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                  color: Color(0xFF3177FF),
+                                  fontSize: 12,
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:p2p/screens/bottomNavBar.dart';
-import 'package:p2p/screens/home.dart';
 import 'package:p2p/screens/service.dart';
+import 'package:p2p/screens/transactionHistory.dart';
 
 class navDrawer extends StatelessWidget {
   const navDrawer({super.key});
@@ -75,7 +75,11 @@ class navDrawer extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.loop),
               title: Text("Transaction"),
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => transaction()),
+                );
+              },
             ),
             ListTile(
               leading: Icon(Icons.grid_view_rounded),

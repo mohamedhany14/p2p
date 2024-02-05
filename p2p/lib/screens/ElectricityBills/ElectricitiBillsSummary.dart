@@ -45,7 +45,7 @@ class electricitySummary extends StatelessWidget {
               Column(
                 children: [
                   Text(
-                    'Bayment details',
+                    'subscribe details',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.black,
@@ -71,9 +71,9 @@ class electricitySummary extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("Month:"),
+                              Text("Name:"),
                               Text(
-                                "march",
+                                "Mohamed Hany Elsayed Mohsen",
                                 style: TextStyle(color: Colors.white),
                               ),
                             ],
@@ -84,9 +84,9 @@ class electricitySummary extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("Bill provider:"),
+                              Text("Governorate:"),
                               Text(
-                                "TAQA Gas Company",
+                                "Ismailia",
                                 style: TextStyle(color: Colors.white),
                               ),
                             ],
@@ -110,9 +110,22 @@ class electricitySummary extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("subscriber number:"),
+                              Text("Electricity provider:"),
                               Text(
-                                "1234567",
+                                "TAQA Gas Company",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          ),
+                          Divider(
+                            color: Colors.black,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Bill:"),
+                              Text(
+                                "---------",
                                 style: TextStyle(color: Colors.white),
                               ),
                             ],
@@ -120,12 +133,40 @@ class electricitySummary extends StatelessWidget {
                           SizedBox(
                             height: 20,
                           ),
-                          Divider(),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Date:"),
+                              Text(
+                                "march",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Invoince number:"),
+                              Text(
+                                "224055",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Divider(
+                            height: 30,
+                          ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                "payment amount :",
+                                "Invoince value :",
                                 style: TextStyle(fontSize: 20),
                               ),
                               Row(

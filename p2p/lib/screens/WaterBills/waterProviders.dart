@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:p2p/screens/ElectricityBills/ElectricityBills.dart';
-import 'package:p2p/screens/GasBills/gasBills.dart';
+import 'package:p2p/screens/WaterBills/waterBills.dart';
 
-class gasProvider extends StatelessWidget {
-  gasProvider({super.key});
-
+class waterPrividers extends StatelessWidget {
+  waterPrividers({super.key});
   final List<Map<String, dynamic>> dataList = [
     {'text': ' Town Gas ', 'imageUrl': 'assets/images/towngas_logo.png'},
     {
@@ -41,7 +39,7 @@ class gasProvider extends StatelessWidget {
                     width: 100,
                   ),
                   Text(
-                    ' Gas bills ',
+                    ' Water bills ',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.black,
@@ -56,7 +54,7 @@ class gasProvider extends StatelessWidget {
               Column(
                 children: [
                   Text(
-                    ' Choose your gas provider ',
+                    ' Choose you water provider ',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.black,
@@ -82,17 +80,18 @@ class gasProvider extends StatelessWidget {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => GasBills()));
+                                      builder: (context) => WaterBills()));
                             } else if (index == 3) {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => GasBills()));
+                                      builder: (context) => WaterBills()));
                             } else {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const GasBills()));
+                                      builder: (context) =>
+                                          const WaterBills()));
                             }
                           },
                           child: Padding(

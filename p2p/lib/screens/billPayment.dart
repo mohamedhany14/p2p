@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:p2p/screens/ElectricityBills/electricityProviders.dart';
 import 'package:p2p/screens/GasBills/GasPrivider.dart';
 import 'package:p2p/screens/GasBills/gasBills.dart';
+import 'package:p2p/screens/WaterBills/waterProviders.dart';
 import 'package:p2p/widgets/defoultCard.dart';
 
 // ignore: camel_case_types
@@ -80,6 +81,11 @@ class pillBayment extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => gasProvider()));
+                        } else if (index == 4) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => waterPrividers()));
                         } else {
                           Navigator.push(
                               context,

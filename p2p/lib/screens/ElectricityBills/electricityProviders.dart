@@ -54,7 +54,7 @@ class electricityProvider extends StatelessWidget {
               Column(
                 children: [
                   Text(
-                    ' Choose you gas provider ',
+                    ' Choose your electricity provider ',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.black,
@@ -65,10 +65,13 @@ class electricityProvider extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: height * 2 / 3,
-                    child: ListView.builder(
-                      // scrollDirection: Axis.vertical,
-
+                    height: height * 2.4 / 3,
+                    child: GridView.builder(
+                      scrollDirection: Axis.vertical,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 1, // Number of columns
+                      ),
                       itemCount: dataList.length,
                       itemBuilder: (context, index) {
                         return GestureDetector(

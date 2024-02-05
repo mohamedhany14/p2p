@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:p2p/constants.dart';
-import 'package:p2p/screens/GasBills/newGasBills.dart';
-import 'package:p2p/screens/GasBills/oldGasBills.dart';
+import 'package:p2p/screens/WaterBills/newWaterBills.dart';
+import 'package:p2p/screens/WaterBills/oldWaterBills.dart';
 
-class GasBills extends StatefulWidget {
-  const GasBills({Key? key}) : super(key: key);
+class WaterBills extends StatefulWidget {
+  const WaterBills({Key? key}) : super(key: key);
 
   @override
-  _GasBillsState createState() => _GasBillsState();
+  _WaterBillsState createState() => _WaterBillsState();
 }
 
-class _GasBillsState extends State<GasBills>
+class _WaterBillsState extends State<WaterBills>
     with SingleTickerProviderStateMixin {
   late TabController tabController;
 
@@ -50,7 +50,7 @@ class _GasBillsState extends State<GasBills>
                       width: 100,
                     ),
                     Text(
-                      ' Gas bills ',
+                      ' Water bills ',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.black,
@@ -109,8 +109,8 @@ class _GasBillsState extends State<GasBills>
                                 child: TabBarView(
                                   controller: tabController,
                                   children: [
-                                    oldGasBills(),
-                                    newGasBills(),
+                                    oldWaterBills(),
+                                    newWaterBills(),
                                   ],
                                 ),
                               )

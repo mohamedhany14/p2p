@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:p2p/constants.dart';
 import 'package:p2p/screens/bottomNavBar.dart';
 
-class gasBillSummary extends StatelessWidget {
-  const gasBillSummary({super.key});
+class waterBillsSummary extends StatelessWidget {
+  const waterBillsSummary({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class gasBillSummary extends StatelessWidget {
                     width: 100,
                   ),
                   Text(
-                    ' Gas bills ',
+                    ' Water bills ',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.black,
@@ -110,7 +110,7 @@ class gasBillSummary extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("Gas provider:"),
+                              Text("Water provider:"),
                               Text(
                                 "TAQA Gas Company",
                                 style: TextStyle(color: Colors.white),
